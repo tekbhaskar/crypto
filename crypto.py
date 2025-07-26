@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 
 st.set_page_config(page_title="🔥 Trending Crypto", layout="wide")
-st.title("🚀 Trending Cryptocurrencies (Live from CoinGecko)")
+st.title("🚀 Today's Trending Cryptocurrencies")
 
 @st.cache_data(ttl=300)  # cache for 5 minutes
 def get_trending_coins():
@@ -69,4 +69,4 @@ st.dataframe(styled_df, use_container_width=True)
 # Refresh button
 if st.button("🔄 Refresh Data"):
     st.cache_data.clear()
-    st.experimental_rerun()
+    st.rerun()
